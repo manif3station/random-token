@@ -41,7 +41,7 @@ sub _build_file {
 
 sub content {
     my ($self) = @_;
-    open my $fh, '<', $self->file;
+    open my $fh, '<', $self->file or return;
     local $/;
     <$fh>;
 }
